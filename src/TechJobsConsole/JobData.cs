@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Collections;
+using System.Globalization;
 
 namespace TechJobsConsole
 {
@@ -138,5 +141,33 @@ namespace TechJobsConsole
 
             return rowValues.ToArray();
         }
+        
+        public static List<Dictionary<string,string>> FindByValue(string searchValue)
+        {
+            LoadData();
+
+            List<Dictionary<string, string>> searchResults = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                foreach (KeyValuePair<string, string> kvp in job)
+                {
+                    string searchTerm = kvp.Value.ToLower();
+
+                    if (searchTerm == searchValue.ToLower())
+                    {
+                        if (!searchResults.Contains(job))
+                        {
+                            searchResults.Add(job);
+                        }
+                        
+                    }
+                }
+            }
+           
+            return searchResults;
+        }
+    
     }
+  
 }
