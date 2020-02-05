@@ -126,7 +126,7 @@ namespace TechJobsConsole
             }
             for (int i = 0; i < someJobs.Count; i++)
             {
-                Console.WriteLine("*****\n");
+                Console.WriteLine("\n*****");
 
                 foreach (KeyValuePair<string,string> kvp in someJobs[i])
                 {
@@ -135,7 +135,7 @@ namespace TechJobsConsole
                     
                 }
 
-                Console.WriteLine("\n*****\n");
+                Console.WriteLine("*****");
             }
                 
         }
