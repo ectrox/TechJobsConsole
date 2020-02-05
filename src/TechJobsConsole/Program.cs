@@ -122,7 +122,7 @@ namespace TechJobsConsole
         {
             if (someJobs.Count == 0)
             {
-                Console.WriteLine("\nSorry, your search returned no results.\nPlease try again with a new search term.");
+                Console.WriteLine("\nYour search didn't return any results.\nPlease try again.\n");
             }
             for (int i = 0; i < someJobs.Count; i++)
             {
@@ -135,7 +135,7 @@ namespace TechJobsConsole
                     
                 }
 
-                Console.WriteLine("*****\n");
+                Console.WriteLine("\n*****\n");
             }
                 
         }

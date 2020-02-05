@@ -46,19 +46,19 @@ namespace TechJobsConsole
             // load data, if not already loaded
             LoadData();
 
-            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> results = new List<Dictionary<string, string>>();
 
-            foreach (Dictionary<string, string> row in AllJobs)
+            foreach (Dictionary<string, string> job in AllJobs)
             {
-                string aValue = row[column];
+                string searchTerm = job[column].ToLower();
 
-                if (aValue.Contains(value))
+                if (searchTerm.Contains(value.ToLower()))
                 {
-                    jobs.Add(row);
+                    results.Add(job);
                 }
             }
 
-            return jobs;
+            return results;
         }
 
         /*
