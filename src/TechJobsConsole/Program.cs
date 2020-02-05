@@ -120,10 +120,13 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-
+            if (someJobs.Count == 0)
+            {
+                Console.WriteLine("\nSorry, your search returned no results.\nPlease try again with a new search term.");
+            }
             for (int i = 0; i < someJobs.Count; i++)
             {
-                Console.WriteLine("*****");
+                Console.WriteLine("*****\n");
 
                 foreach (KeyValuePair<string,string> kvp in someJobs[i])
                 {
@@ -132,7 +135,7 @@ namespace TechJobsConsole
                     
                 }
 
-                Console.WriteLine("*****");
+                Console.WriteLine("*****\n");
             }
                 
         }
